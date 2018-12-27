@@ -3,9 +3,9 @@ set -e
 set -u
 set -o pipefail
 
-selection=$($HOME/bin/rofipinboard.py all | awk 'NF == 2 { $0 = $0 "NOTAG" }; { $2 = substr($2,0,70); print $1"\t"$2"\t"$3}' | column -t | rofi -lines 15 -width 1000 -dmenu -p "> "  -mesg "Enter to select a bookmark.")
+selection=$(rofipinboard.py all | awk 'NF == 2 { $0 = $0 "NOTAG" }; { $2 = substr($2,0,70); print $1"\t"$2"\t"$3}' | column -t | rofi -lines 15 -width 1000 -dmenu -p "> "  -mesg "Enter to select a bookmark.")
 id=$(echo ${selection} | awk '{print $1}')
-url=$($HOME/bin/rofipinboard.py url "${id}" )
+url=$(rofipinboard.py url "${id}" )
 
 if [ ! -z "${BROWSER}" ]; then
 	${BROWSER} "${url}"

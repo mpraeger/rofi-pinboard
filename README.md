@@ -1,7 +1,7 @@
 Python3 script to search through pinboard bookmarks via rofi and open the URL in your default browser.
 
 ```
-Usage: bookmarks.py [OPTIONS] COMMAND [ARGS]...
+Usage: rofipinboard.py [OPTIONS] COMMAND [ARGS]...
 
   Main function
 
@@ -19,3 +19,11 @@ Please either install the required python packages or ensure that they are insta
 ```
 $ pip install -r requirements.txt
 ```
+
+Rofi also needs to be installed.
+
+## Installation
+Place `rofipinboard.py` and `rofi-pinboard` somewhere in your PATH. Afterwards execute `rofipinboard.py setup` to store your Pinboard API token.
+
+## Using with rofi
+You will have to call the included bash script, which is going to take care of the rest.
